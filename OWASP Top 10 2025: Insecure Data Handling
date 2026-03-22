@@ -1,0 +1,69 @@
+TASK 1:INTRODUCTION
+  This room will introduce you to 3 elements of the OWASP Top 10 list (2025). In this room, you will learn about the elements relating to application behaviour and user input. We will cover these vulnerabilities briefly, how to prevent them, and finally, you will practice exploiting these vulnerabilities:
+A04: Cryptographic Failures
+A05: Injection
+A08: Software or Data Integrity Failures
+Answer the questions below
+ I'm ready!
+ No answer needed
+TASK 2:A04:CRYPTOGRAPHIC FAILURE
+   Cryptographic failiures makes yet another appearence on this OWASP Top 10 list. Let's explore what this exactly and some mitigation steps below.
+What are Cryptographic Failures?
+Cryptographic failures happen when sensitive data isn't adequately protected due to lack of encryption, faulty implementation, or insufficient security measures. This includes storing passwords without hashing, using outdated or weak algorithms (such as MD5, SHA1, or DES), exposing encryption keys, or failing to secure data during transmission.
+An incredible example of this is an application or service "rolling their own cryptography", rather than using well-established, vetted, and verifiably secure encryption algorithms.
+How to Prevent Cryptographic Failures
+Preventing cryptographic failures starts with choosing strong, modern algorithms and implementing them properly. Sensitive information such as passwords should be hashed using robust, slow hashing functions like bcrypt, scrypt, or Argon2. When encrypting data, avoid creating your own algorithms; instead, rely on trusted, industry-standard libraries.
+Never embed access credentials (i.e., to a third-party service) in source code, configuration files, or repositories. Instead, use secure key management systems or environments specifically designed for storing secrets.
+Practical
+The practical for this task is located at http://MACHINE_IP:8001(opens in new tab). This web app demonstrates a "note sharing" service that uses a weak, shared derivative key to protect the notes.
+Follow the steps on the web application to unlock all notes and retrieve a flag.
+Recommended TryHackMe Content
+If you'd like to explore this type of attack in much further depth, we highly recommend the following TryHackMe content:
+Cryptographic Failures Module
+Answer the questions below
+  Decrypt the encrypted notes. One of them will contain a flag value. What is it?
+  THM{WEAK_CRYPTO_FLAG}
+TASK 3:A05:INJECTION
+   Cryptographic failiures makes yet another appearence on this OWASP Top 10 list. Let's explore what this exactly and some mitigation steps below.
+What are Cryptographic Failures?
+Cryptographic failures happen when sensitive data isn't adequately protected due to lack of encryption, faulty implementation, or insufficient security measures. This includes storing passwords without hashing, using outdated or weak algorithms (such as MD5, SHA1, or DES), exposing encryption keys, or failing to secure data during transmission.
+An incredible example of this is an application or service "rolling their own cryptography", rather than using well-established, vetted, and verifiably secure encryption algorithms.
+How to Prevent Cryptographic Failures
+Preventing cryptographic failures starts with choosing strong, modern algorithms and implementing them properly. Sensitive information such as passwords should be hashed using robust, slow hashing functions like bcrypt, scrypt, or Argon2. When encrypting data, avoid creating your own algorithms; instead, rely on trusted, industry-standard libraries.
+Never embed access credentials (i.e., to a third-party service) in source code, configuration files, or repositories. Instead, use secure key management systems or environments specifically designed for storing secrets.
+Practical
+The practical for this task is located at http://MACHINE_IP:8001(opens in new tab). This web app demonstrates a "note sharing" service that uses a weak, shared derivative key to protect the notes.
+Follow the steps on the web application to unlock all notes and retrieve a flag.
+Recommended TryHackMe Content
+If you'd like to explore this type of attack in much further depth, we highly recommend the following TryHackMe content:
+Cryptographic Failures Module
+Answer the questions below
+  Decrypt the encrypted notes. One of them will contain a flag value. What is it?
+  THM{WEAK_CRYPTO_FLAG}
+TASK 4:A08:SOFTWARE OR DATA INTEGRITY FAILURES
+   Again, Software or Data Integrity failures have been a long-standing feature on the OWASP Top 10 list, featuring twice over the last two releases. Let's explore this a bit further below.
+What Are Software or Data Integrity Failures?
+Software or Data Integrity Failures occur when an application relies on code, updates, or data it assumes are safe, without verifying their authenticity, integrity, or origin. This includes trusting software updates without verification, loading scripts or configuration files from untrusted sources, failing to validate data that impacts application logic, or accepting data such as binaries, templates, or JSON files without confirming whether it has been altered.
+How to Avoid Software & Data Integrity Failures
+Preventing these failures begins with establishing trust boundaries. Applications should never assume that code, updates, or key pieces of data are legitimate and automatically trusted; their integrity must be verified. This involves using methods such as cryptographic checks (like checksums) for update packages and ensuring that only trusted sources can modify critical artefacts.
+Additionally, for applications, integrity and trust boundaries should also be within build processes such as CI/CD.
+Practical
+This practical will demonstrate a deserialization attack in Python. You can access this practical on http://MACHINE_IP:8002(opens in new tab).
+Follow the steps in the practical to generate and provide some malicious input to the web application.
+Recommended TryHackMe Content
+If you'd like to explore this type of attack in much further depth, we highly recommend the following TryHackMe content:
+Insecure Deserialisation
+Supply Chain Attack: Lottie
+Answer the questions below
+   Use Python to pickle a malicious, serialised payload that reads the contents of flag.txt and submits it to the application.
+   What are the contents of flag.txt? 
+   THM{INSECURE_DESERIALIZATION}
+
+
+
+
+
+
+
+
+
